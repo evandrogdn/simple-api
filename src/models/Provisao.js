@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ProvisaoSchema = new mongoose.Schema({
-    produtoID: String,
+    estoqueID: String,
     estoqueMinimo: Number,
     estoqueMaximo: Number,
     provisaoAtiva: Boolean
