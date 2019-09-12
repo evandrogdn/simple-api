@@ -4,7 +4,7 @@
   "description": "API para operaçoes de CRUD relacionadas ao controle de estoque",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
