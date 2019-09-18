@@ -1,7 +1,7 @@
 const { Router } = require('express');
 
 const EstoqueController = require('./controllers/EstoqueController');
-const ForncedorController = require('./controllers/ForncedorController');
+const FornecedorController = require('./controllers/ForncedorController');
 const ProdutoController = require('./controllers/ProdutoController');
 const ProvisaoController = require('./controllers/ProvisaoController');
 
@@ -17,18 +17,18 @@ class Routes {
 
     loadRotasEstoque() {
         this.routes.get('/api/estoque', EstoqueController.all);
-        this.routes.get('/api/estoque/:id', EstoqueController.get)
+        this.routes.get('/api/estoque/:id', EstoqueController.get);
         this.routes.post('/api/estoque', EstoqueController.create);
         this.routes.put('/api/estoque/:id', EstoqueController.update);
         this.routes.delete('/api/estoque/:id', EstoqueController.delete);
     }
 
     loadRotasFornecedor() {
-        this.routes.get('/api/fornecedor', ForncedorController.all);
-        this.routes.get('/api/fornecedor/:id', ForncedorController.get);
-        this.routes.post('/api/fornecedor', ForncedorController.create);
-        this.routes.put('/api/fornecedor/:id', ForncedorController.update);
-        this.routes.delete('/api/fornecedor/:id', ForncedorController.delete);
+        this.routes.get('/api/fornecedor', FornecedorController.all);
+        this.routes.get('/api/fornecedor/:id', FornecedorController.get);
+        this.routes.post('/api/fornecedor', FornecedorController.create);
+        this.routes.put('/api/fornecedor/:id', FornecedorController.update);
+        this.routes.delete('/api/fornecedor/:id', FornecedorController.delete);
     }
 
     loadRotasProduto() {

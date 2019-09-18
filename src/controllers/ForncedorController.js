@@ -8,7 +8,7 @@ module.exports = {
     async create(req, res) {
         const { nome, nomeFantasia, inscrFederal, logradouro, bairro, cidade, numero, complemento, telefone, email } = req.body;
 
-        const insert = Forncedor.create({
+        const insert = Fornecedor.create({
             nome, nomeFantasia, inscrFederal, logradouro, bairro, cidade, numero, complemento, telefone, email
         });
 
@@ -16,11 +16,11 @@ module.exports = {
     },
 
     async update(req, res) {
-        const forncedor = await Fornecedor.findById(req.params.id);
+        const fornecedor = await Fornecedor.findById(req.params.id);
 
         const { nome, nomeFantasia, inscrFederal, logradouro, bairro, cidade, numero, complemento, telefone, email } = req.body;
 
-        Object.assign(forncedor, { nome, nomeFantasia, inscrFederal, logradouro, bairro, cidade, numero, complemento, telefone, email }).save();
+        Object.assign(fornecedor, { nome, nomeFantasia, inscrFederal, logradouro, bairro, cidade, numero, complemento, telefone, email }).save();
 
         return res.json(fornecedor);
     },
@@ -32,6 +32,6 @@ module.exports = {
     },
 
     async get(req, res) {
-        return res.json(await Forncedor.findById(req.params.id));
+        return res.json(await Fornecedor.findById(req.params.id));
     }
 }

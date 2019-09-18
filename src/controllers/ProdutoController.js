@@ -18,7 +18,7 @@ module.exports = {
 
         const { referencia, descricao, valor, fornecedorID } = req.body;
 
-        Object.assign(produto, { referencia, descricao, valor, fornecedorID });
+        Object.assign(produto, { referencia, descricao, valor, fornecedorID }).save();
 
         return res.json(produto);
     },
@@ -30,6 +30,6 @@ module.exports = {
     },
 
     async get (req, res) {
-        return res.json(await Produto.findById(req.params.id).remove());
+        return res.json(await Produto.findById(req.params.id));
     }
 }
