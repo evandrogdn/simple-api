@@ -18,7 +18,7 @@ module.exports = {
 
         const { estoqueID, estoqueMinimo, estoqueMaximo, provisaoAtiva } = req.body;
 
-        Object.assign(provisao, { estoqueID, estoqueMinimo, estoqueMaximo, provisaoAtiva });
+        Object.assign(provisao, { estoqueID, estoqueMinimo, estoqueMaximo, provisaoAtiva }).save();
 
         return res.json(provisao);
     },
