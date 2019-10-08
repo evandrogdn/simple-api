@@ -4,6 +4,7 @@ const EstoqueController = require('./controllers/EstoqueController');
 const FornecedorController = require('./controllers/ForncedorController');
 const ProdutoController = require('./controllers/ProdutoController');
 const ProvisaoController = require('./controllers/ProvisaoController');
+const UnidadeMedidaController = require('./controllers/UnidadeMedidaController');
 
 class Routes {
     constructor() {
@@ -13,6 +14,7 @@ class Routes {
         this.loadRotasFornecedor();
         this.loadRotasProduto();
         this.loadRotasProvisao();
+        this.loadRotasUnidadeMedida();
     }
 
     loadRotasEstoque() {
@@ -45,6 +47,14 @@ class Routes {
         this.routes.post('/api/provisao', ProvisaoController.create);
         this.routes.put('/api/provisao/:id', ProvisaoController.update);
         this.routes.delete('/api/provisao/:id', ProvisaoController.delete);
+    }
+
+    loadRotasUnidadeMedida() {
+        this.routes.get('/api/unidade-medida', UnidadeMedidaController.all);
+        this.routes.get('/api/unidade-medida/:id', UnidadeMedidaController.get);
+        this.routes.post('/api/unidade-medida', UnidadeMedidaController.create);
+        this.routes.put('/api/unidade-medida/:id', UnidadeMedidaController.update);
+        this.routes.delete('/api/unidade-medida/:id', UnidadeMedidaController.delete);
     }
 }
 
